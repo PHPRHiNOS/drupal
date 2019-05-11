@@ -524,6 +524,7 @@ class InstallHelper implements ContainerInjectionInterface {
       'uuid' => $data['uuid'],
       'info' => $data['info'],
       'type' => $data['type'],
+      'langcode' => 'en',
       'field_title' => [
         'value' => $data['field_title'],
       ],
@@ -556,6 +557,7 @@ class InstallHelper implements ContainerInjectionInterface {
       'uuid' => $data['uuid'],
       'info' => $data['info'],
       'type' => $data['type'],
+      'langcode' => 'en',
       'field_disclaimer' => [
         'value' => $data['field_disclaimer'],
         'format' => 'basic_html',
@@ -585,6 +587,7 @@ class InstallHelper implements ContainerInjectionInterface {
       'uuid' => $data['uuid'],
       'info' => $data['info'],
       'type' => $data['type'],
+      'langcode' => 'en',
       'field_title' => [
         'value' => $data['field_title'],
       ],
@@ -737,7 +740,7 @@ class InstallHelper implements ContainerInjectionInterface {
    */
   protected function getUser($name) {
     $user_storage = $this->entityTypeManager->getStorage('user');
-    $users = $user_storage->loadByProperties(['name' => $name]);;
+    $users = $user_storage->loadByProperties(['name' => $name]);
     if (empty($users)) {
       // Creating user without any password.
       $user = $user_storage->create([
